@@ -13,6 +13,8 @@
     pkgs.lazygit
     pkgs.fd
     pkgs.xclip
+    pkgs.curl
+    pkgs.dust
 
     pkgs.docker
     pkgs.nodejs-slim
@@ -25,8 +27,8 @@
     pkgs.cargo-audit
     pkgs.cargo-nextest
     pkgs.cargo-udeps
-    # pkgs.cargo-smart-release
-
+    # pkgs.cargo-smart-release -> unavailable on nix pkgs currently manually install with cargo
+    
     pkgs.uv
     pkgs.go
     pkgs.python3Full
@@ -54,6 +56,7 @@
   programs.git = {
     enable = true;
     userName = "Alix Macdonald";
+    userEmail = "alixmacdonald10@googlemail.com";
     # defaultBranch = "main";
   };
 
@@ -70,5 +73,7 @@
 
     ${pkgs.rustup}/bin/rustup default stable
     ${pkgs.rustup}/bin/rustup toolchain install nightly
+    ${pkgs.rustup}/bin/rustup component add rust-analyzer
+
   '';
 }

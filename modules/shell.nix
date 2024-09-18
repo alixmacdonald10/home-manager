@@ -9,6 +9,7 @@
     pkgs.ripgrep
     pkgs.starship
     pkgs.eza
+    pkgs.tmux
 
     # icons
     pkgs.nerdfonts

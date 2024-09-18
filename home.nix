@@ -22,8 +22,8 @@
     pkgs.firefox-devedition
 
     # essential tooling
-    pkgs.curl
-    pkgs.dust
+          
+    # peripheral management
 
   ];
 
