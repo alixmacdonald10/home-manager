@@ -16,5 +16,10 @@ This repo houses the home manager config. This only works for Linux systems.
 - Configuration options for these packages can be found here: https://search.nixos.org/options
 
 # Finishing up
-There may be permissions issues which occur however these can generally be fixed by adding your `USER` to the appropriate `GROUP`
+## Ubuntu
+- Set up you default shell to zsh by adding `/home/USER/.nix-profile/bin/zsh` as a line to `/etc/shells.ith` then running: `chsh -s $(which zsh)`
+- There may be permissions issues which occur however these can generally be fixed by adding your `USER` to the appropriate `GROUP`
+### Docker
+There are currently issues installing docker on non NixOS https://github.com/NixOS/nixpkgs/issues/70407. To alleviate this install docker daemon manually. 
+To run docker non sudo create a docker group with: `sudo groupadd docker` then add your user with: `sudo usermod -aG docker $(whoami)`. Log out and back in then run: `newgrp docker` then run: `groups`. You should see docker under the groups your user is a member of. Set docker to start automatically with: `sudo systemctl enable docker.service`
 
