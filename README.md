@@ -13,7 +13,7 @@ This repo houses the home manager config. This only works for Linux systems.
 
 [NOTE!]
 - All available nix packages can be found here: https://search.nixos.org/packages?channel=24.05&from=0&size=50&sort=relevance&type=packages&query=firefox+dev+extension
-- Configuration options for these packages can be found here: https://search.nixos.org/options
+- Configuration options for these packages can be found here (for home-manager): https://home-manager-options.extranix.com/
 
 # Finishing up
 ## Ubuntu
