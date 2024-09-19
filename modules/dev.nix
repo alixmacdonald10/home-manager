@@ -59,6 +59,11 @@
     userName = "Alix Macdonald";
     userEmail = "alixmacdonald10@googlemail.com";
     # defaultBranch = "main";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   # nvim config is automatically read from ~/.config/nvim so you have to git clone into there first
