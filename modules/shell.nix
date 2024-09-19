@@ -73,14 +73,20 @@
       enable = true;
     };
     enableCompletion = true;
+    autosuggestion = {
+      enable = true;
+    };
     history = {
-      size = 10000;
+      size = 5000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+         # auto suggestions
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
+        { name = "zsh-users/zsh-completions"; }
       ];
     };
   };
