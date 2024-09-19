@@ -7,7 +7,6 @@
     pkgs.bat
     pkgs.ripgrep
     pkgs.eza
-    pkgs.tmux
 
     # icons
     pkgs.nerdfonts
@@ -61,6 +60,44 @@
   programs.dircolors = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    sensibleOnTop = true;
+    shell = "\${pkgs.zsh}/bin/zsh";
+    keyMode = "vi";
+    mouse = true;
+    extraConfig = ''
+      set-option -sa terminal-overrides ",xterm*:Tc"
+      
+      set -g base-index 1
+      set -g pane-base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
+      
+      unbind C-b
+      set -g prefix C-Space
+      bind C-Space send-prefix
+      
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+    '';
+    plugins = with pkgs; [
+      {
+        plugin = tmuxPlugins.sensible;
+      }
+      {
+        plugin = tmuxPlugins.vim-tmux-navigator;
+      }
+      {
+        plugin = tmuxPlugins.catppuccin;
+      }
+      {
+        plugin = tmuxPlugins.yank;
+      }
+    ];
   };
 
   programs.zsh = {
