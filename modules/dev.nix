@@ -16,7 +16,8 @@
     pkgs.curl
     pkgs.dust
 
-    pkgs.docker
+    # pkgs.docker
+    # pkgs.docker-buildx
     pkgs.nodejs-slim
     pkgs.nodePackages.npm
     pkgs.luajitPackages.luarocks
@@ -52,7 +53,7 @@
   home.sessionVariables = {
   
   };
-  
+
   programs.git = {
     enable = true;
     userName = "Alix Macdonald";
