@@ -4,10 +4,8 @@
   home.packages = [
     
     # tools
-    pkgs.fzf
     pkgs.bat
     pkgs.ripgrep
-    pkgs.starship
     pkgs.eza
     pkgs.tmux
 
@@ -15,12 +13,54 @@
     pkgs.nerdfonts
   ];
 
-  home.file = {
-  
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      add_newline = false;
+      format = "$os$directory$git_branch$rust$python$lua$character";
+      character = {
+        success_symbol = "➜ ";
+        error_symbol = "󰯈 ";
+      };
+      os = {
+        symbols = {
+          Alpine = " ";
+          Arch = " ";
+          Kali = " ";
+          Linux = " ";
+          Macos = " ";
+          Raspbian = " ";
+          Ubuntu = " ";
+          Windows = "󰍲 ";
+        };
+      };
+      directory = {
+        read_only = " 󰌾";
+      };
+      git_branch = {
+        symbol = " ";
+      };
+      lua = {
+        symbol = " ";
+      };
+      python = {
+        symbol = " ";
+      };
+      rust = {
+        symbol = " ";
+      };
+    };
   };
 
-  home.sessionVariables = {
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
+  programs.dircolors = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.zsh = {
