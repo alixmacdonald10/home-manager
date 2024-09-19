@@ -66,7 +66,7 @@
     enable = true;
     clock24 = true;
     sensibleOnTop = true;
-    shell = "\${pkgs.zsh}/bin/zsh";
+    shell = "${pkgs.zsh}/bin/zsh";
     keyMode = "vi";
     mouse = true;
     extraConfig = ''
