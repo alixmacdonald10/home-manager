@@ -39,7 +39,13 @@
     pkgs.protobuf
 
     # tools and misc 
+    pkgs.openssl
+    pkgs.openssl.dev
+    pkgs.pkg-config
+    pkgs.zlib
     pkgs.gcc
+    pkgs.gnumake
+    pkgs.cmake
     pkgs.lld
     pkgs.mold
     pkgs.binutils
@@ -53,7 +59,7 @@
   };
 
   home.sessionVariables = {
-  
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
   programs.git = {
@@ -70,11 +76,12 @@
 
   # nvim config is automatically read from ~/.config/nvim so you have to git clone into there first
   programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+     enable = true;
+     package = pkgs.neovim;
+     defaultEditor = true;
+     viAlias = true;
+     vimAlias = true;
+     vimdiffAlias = true;
   };
 
   home.activation.installCargoPackages = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
