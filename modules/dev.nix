@@ -18,6 +18,8 @@
 
     # pkgs.docker
     # pkgs.docker-buildx
+    pkgs.podman
+    pkgs.podman-tui
     pkgs.nodejs-slim
     pkgs.nodePackages.npm
     pkgs.luajitPackages.luarocks
