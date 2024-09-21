@@ -30,6 +30,9 @@
     pkgs.cargo-audit
     pkgs.cargo-nextest
     pkgs.cargo-udeps
+    pkgs.cargo-wipe
+    pkgs.cargo-expand
+    pkgs.bacon
     # pkgs.cargo-smart-release -> unavailable on nix pkgs currently manually install with cargo
     
     pkgs.uv
