@@ -12,6 +12,10 @@
     pkgs.nerdfonts
   ];
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
