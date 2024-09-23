@@ -32,6 +32,7 @@
       	  ./modules/shell.nix
       	  ./modules/dev.nix
 	        ./modules/bsc.nix
+	        ./modules/photography.nix 
 	      ];
 
         # Optionally use extraSpecialArgs
