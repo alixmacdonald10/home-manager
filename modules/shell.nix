@@ -7,6 +7,8 @@
     pkgs.bat
     pkgs.ripgrep
     pkgs.eza
+    pkgs.tmuxinator
+    pkgs.libnotify
 
     # icons
     pkgs.nerdfonts
@@ -72,6 +74,9 @@
     sensibleOnTop = true;
     shell = "${pkgs.zsh}/bin/zsh";
     keyMode = "vi";
+    tmuxinator = {
+      enable = true;
+    }; 
     mouse = true;
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
@@ -150,6 +155,8 @@
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "zsh-users/zsh-completions"; }
+        { name = "MichaelAquilina/zsh-autoswitch-virtualenv"; }
+        { name = "MichaelAquilina/zsh-auto-notify"; }
       ];
     };
   };
