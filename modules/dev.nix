@@ -15,6 +15,7 @@
     pkgs.xclip
     pkgs.curl
     pkgs.dust
+    pkgs.silicon
 
     # pkgs.docker
     # pkgs.docker-buildx
