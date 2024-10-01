@@ -16,6 +16,7 @@
     pkgs.curl
     pkgs.dust
     pkgs.silicon
+    pkgs.trivy
 
     # pkgs.docker
     # pkgs.docker-buildx
