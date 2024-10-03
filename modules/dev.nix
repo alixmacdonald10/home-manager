@@ -17,6 +17,7 @@
     pkgs.dust
     pkgs.silicon
     pkgs.trivy
+    pkgs.gitleaks
 
     # pkgs.docker
     # pkgs.docker-buildx
