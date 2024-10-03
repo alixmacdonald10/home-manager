@@ -68,13 +68,15 @@
   };
 
   programs.git = {
+    package = pkgs.gitFull;
     enable = true;
     userName = "Alix Macdonald";
-    userEmail = "alixmacdonald10@googlemail.com";
-    # defaultBranch = "main";
     extraConfig = {
       init = {
         defaultBranch = "main";
+      };
+      credential = {
+        helper = "${pkgs.gitFull}/bin/git-credential-libsecret";
       };
     };
   };

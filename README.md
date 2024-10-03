@@ -28,3 +28,8 @@ Once created this repo can be used to declaritively configure your packages inst
 There are currently issues installing docker on non NixOS https://github.com/NixOS/nixpkgs/issues/70407. To alleviate this install docker daemon manually. 
 To run docker non sudo create a docker group with: `sudo groupadd docker` then add your user with: `sudo usermod -aG docker $(whoami)`. Log out and back in then run: `newgrp docker` then run: `groups`. You should see docker under the groups your user is a member of. Set docker to start automatically with: `sudo systemctl enable docker.service`
 
+## Git
+Create your git SSH keys as required and add them to your ssh-agent.
+
+libsecret will be used to store and manage git https credentials. This happens automatically when you put enter the password the first time.
+
