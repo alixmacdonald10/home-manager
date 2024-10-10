@@ -18,6 +18,9 @@
     pkgs.silicon
     pkgs.trivy
     pkgs.gitleaks
+    pkgs.nmap
+    pkgs.mitmproxy
+    pkgs.gnuplot
 
     # pkgs.docker
     # pkgs.docker-buildx
