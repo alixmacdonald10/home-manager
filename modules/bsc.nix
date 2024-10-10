@@ -3,8 +3,7 @@
 {
   home.packages = [
     # general packages
-    pkgs.teams-for-linux
-    
+    # pkgs.intune-portal 
     # platform CLIs
     (pkgs.azure-cli.withExtensions [ pkgs.azure-cli.extensions.aks-preview ])   
     pkgs.awscli2
