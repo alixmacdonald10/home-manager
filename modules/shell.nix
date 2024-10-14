@@ -157,6 +157,7 @@
         { name = "zsh-users/zsh-completions"; }
         { name = "MichaelAquilina/zsh-autoswitch-virtualenv"; }
         { name = "MichaelAquilina/zsh-auto-notify"; }
+        { name = "jeffreytse/zsh-vi-mode"; }
       ];
     };
   };
