@@ -5,7 +5,7 @@
     # programmes
     pkgs.kubectl
     pkgs.kubernetes-helm
-    pkgs.terraform
+    pkgs.tenv
     pkgs.hurl
     pkgs.jq
     pkgs.bottom
