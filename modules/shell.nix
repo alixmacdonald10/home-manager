@@ -63,6 +63,11 @@
     enableZshIntegration = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.dircolors = {
     enable = true;
     enableZshIntegration = true;
@@ -136,6 +141,7 @@
     shellAliases = {
       ls = "eza -l";
       cat = "bat";
+      cd = "z";
     };
     syntaxHighlighting = {
       enable = true;
