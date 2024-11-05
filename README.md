@@ -18,6 +18,53 @@ Once created this repo can be used to declaritively configure your packages inst
 - Configuration options for these packages can be found here (for home-manager): https://home-manager-options.extranix.com/
 
 # Finishing up
+## Running Nix on non NixOS distros
+Applications which require OpenGL or Vulkan can have issues when running from nix on non-nixOS distros (ubuntu, Arch, etc). To fix this you must run with `nixGL programme args`. NixGL is a wrapper which facilitates OpenGL and Vulkan. For example on Ubuntu my `home.nix` contains `pkgs.nixgl.nixGLIntel` as it uses Intel graphics. To run kitty I would then use `nixGLIntel kitty`. You should add the appropriate nixGL wrapper to the `home.nix` for your device. This can be automated so that `kitty` or any other programme required is always ran with `nixGL` prepended. To do this update the config in your `home.nix` as per the below example:
+
+```nix
+{ config, pkgs, ... }:
+
+let
+  kittyWithNixGL = pkgs.stdenv.mkDerivation {
+    name = "kitty-with-nixGL";
+    buildInputs = [ pkgs.nixgl.nixGLIntel pkgs.kitty ];
+    phases = [ "installPhase" ];
+    installPhase = ''
+      mkdir -p $out/bin
+      cat > $out/bin/kitty <<EOF
+      #!/bin/sh
+      exec nixGLIntel ${pkgs.kitty}/bin/kitty "\$@"
+      EOF
+      chmod +x $out/bin/kitty
+    '';
+  };
+in
+{
+  home.username = "amac";
+  home.homeDirectory = "/home/amac";
+
+  targets.genericLinux.enable = true;
+  
+  home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  home.packages = [
+    # essential tooling
+          
+    # peripheral management
+    pkgs.nixgl.nixGLIntel
+  ];
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  programs.kitty = {
+    enable = true;
+    package = kittyWithNixGL;
+  };
+
+}
+```
+
 ## Ubuntu
 - Set up you default shell to zsh by adding `/home/USER/.nix-profile/bin/zsh` as a line to `/etc/shells.ith` then running: `chsh -s $(which zsh)`
 - There may be permissions issues which occur however these can generally be fixed by adding your `USER` to the appropriate `GROUP`
