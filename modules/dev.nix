@@ -21,6 +21,7 @@
     pkgs.nmap
     pkgs.mitmproxy
     pkgs.gnuplot
+    pkgs.yazi
 
     # pkgs.docker
     # pkgs.docker-buildx
