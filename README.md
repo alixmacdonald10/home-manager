@@ -60,6 +60,15 @@ in
   programs.kitty = {
     enable = true;
     package = kittyWithNixGL;
+    shellIntegration.enableZshIntegration = true;
+    theme = "Catppuccin-Macchiato";
+    keybindings = {
+      "ctrl+shift+c" = "copy_or_interrupt";
+      "ctrl+shift+v" = "paste";
+    };
+    extraConfig = "
+      background_opacity 0.9
+    ";
   };
 
 }
