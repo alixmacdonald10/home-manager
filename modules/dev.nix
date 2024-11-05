@@ -24,6 +24,7 @@
 
     # pkgs.docker
     # pkgs.docker-buildx
+    pkgs.lazydocker
     pkgs.podman
     pkgs.podman-tui
     pkgs.nodejs-slim
