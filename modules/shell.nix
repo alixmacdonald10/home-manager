@@ -150,6 +150,7 @@
     history = {
       size = 5000;
       path = "${config.xdg.dataHome}/zsh/history";
+      ignoreSpace = true; 
     };
     zplug = {
       enable = true;
