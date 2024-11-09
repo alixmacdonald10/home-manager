@@ -3,9 +3,14 @@
 {
   home.packages = [
     pkgs.neofetch
-    pkgs.firefox
     pkgs.flameshot
   ];
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    
+  };
 
   home.sessionVariables = {
     BROWSER = "${pkgs.firefox}/bin/firefox";
