@@ -60,6 +60,8 @@
     pkgs.lld
     pkgs.mold
     pkgs.binutils
+    pkgs.asciinema
+    pkgs.asciinema-agg
 
     # debuggers
     pkgs.vscode-extensions.vadimcn.vscode-lldb  
