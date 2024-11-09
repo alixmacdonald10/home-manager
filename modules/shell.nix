@@ -150,7 +150,8 @@
     history = {
       size = 5000;
       path = "${config.xdg.dataHome}/zsh/history";
-      ignoreSpace = true; 
+      ignoreSpace = true;
+      ignoreAllDups = true;
     };
     zplug = {
       enable = true;
@@ -164,6 +165,9 @@
         { name = "jeffreytse/zsh-vi-mode"; }
       ];
     };
+    initExtra = ''
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+    '';
   };
 
 }
