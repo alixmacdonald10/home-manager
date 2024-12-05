@@ -14,6 +14,7 @@
     pkgs.fd
     pkgs.xclip
     pkgs.curl
+    pkgs.grpcurl
     pkgs.dust
     pkgs.silicon
     pkgs.trivy
