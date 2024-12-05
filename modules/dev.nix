@@ -76,6 +76,9 @@
 
   home.sessionVariables = {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    
+    # enables checking and signing of docker images handled automagically by docker
+    DOCKER_CONTENT_TRUST = 1; 
   };
 
   programs.git = {
