@@ -23,6 +23,8 @@
     pkgs.gnuplot
     pkgs.yazi
 
+    pkgs.k3d
+
     # pkgs.docker
     # pkgs.docker-buildx
     pkgs.lazydocker
