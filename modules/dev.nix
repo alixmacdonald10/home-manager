@@ -32,7 +32,6 @@
     pkgs.podman-tui
     pkgs.nodejs-slim
     pkgs.nodePackages.npm
-    pkgs.luajitPackages.luarocks
     
     # languages
     pkgs.rustup
@@ -48,7 +47,8 @@
     pkgs.uv
     pkgs.go
     pkgs.python3Full
-    pkgs.lua
+    pkgs.lua51Packages.lua
+    pkgs.luajitPackages.luarocks
     pkgs.protobuf
 
     # tools and misc 
