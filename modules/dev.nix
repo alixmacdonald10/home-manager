@@ -5,7 +5,8 @@
     # programmes
     pkgs.kubectl
     pkgs.kubernetes-helm
-    pkgs.tenv
+    pkgs.istioctl
+    pkgs.tenv  # terraform/opentofu 
     pkgs.hurl
     pkgs.jq
     pkgs.bottom
@@ -13,24 +14,24 @@
     pkgs.lazygit
     pkgs.fd
     pkgs.xclip
-    pkgs.curl
+    pkgs.curl  
     pkgs.grpcurl
-    pkgs.dust
+    pkgs.dust  # drive usage
     pkgs.silicon
     pkgs.trivy
     pkgs.gitleaks
     pkgs.nmap
     pkgs.mitmproxy
     pkgs.gnuplot
-    pkgs.yazi
-
+    pkgs.yazi  #file browser
+    pkgs.yarn 
     pkgs.k3d
+    pkgs.mermaid-cli  # render mermaid diags
+    pkgs.plantuml  # render plantuml diags
 
     # pkgs.docker
     # pkgs.docker-buildx
     pkgs.lazydocker
-    pkgs.podman
-    pkgs.podman-tui
     pkgs.nodejs-slim
     pkgs.nodePackages.npm
     
@@ -45,6 +46,9 @@
     pkgs.bacon
     # pkgs.cargo-smart-release -> unavailable on nix pkgs currently manually install with cargo
     
+    pkgs.valgrind
+    pkgs.just 
+
     pkgs.uv
     pkgs.go
     pkgs.python3Full
@@ -60,7 +64,7 @@
     pkgs.gcc
     pkgs.gnumake
     pkgs.cmake
-    pkgs.lld
+    # pkgs.lld
     pkgs.mold
     pkgs.binutils
     pkgs.asciinema
@@ -78,7 +82,7 @@
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     
     # enables checking and signing of docker images handled automagically by docker
-    DOCKER_CONTENT_TRUST = 1; 
+    DOCKER_CONTENT_TRUST = 0; 
   };
 
   programs.git = {
@@ -99,6 +103,8 @@
   programs.neovim = {
      enable = true;
      package = pkgs.neovim;
+     extraLuaPackages = ps: [ ps.magick ];
+     extraPackages = [ pkgs.imagemagick ]; 
      defaultEditor = true;
      viAlias = true;
      vimAlias = true;
@@ -110,6 +116,5 @@
     ${pkgs.rustup}/bin/rustup default stable
     ${pkgs.rustup}/bin/rustup toolchain install nightly
     ${pkgs.rustup}/bin/rustup component add rust-analyzer
-
   '';
 }
